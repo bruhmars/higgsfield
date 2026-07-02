@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router";
 import { Button } from "./ui/button";
 
 export function Appbar() {
+
+    const navigate = useNavigate(); 
+
     return <div>
         <div className="bg-black text-white flex justify-between">
 
@@ -11,11 +15,15 @@ export function Appbar() {
             <div className="flex">
 
                 <div className="flex items-center p-2">
-                    <Button variant={"ghost"}>Sign up</Button>
+                    <Button variant={"ghost"} onClick={() => {
+                        navigate("./signup")
+                    }}>Sign up</Button>
                 </div>
 
                 <div className="flex items-center p-2">
-                    <Button variant={"ghost"}>Sign in</Button>
+                    <Button variant={"ghost"} onClick={()=> {
+                        navigate("./signin")
+                    }}>Sign in</Button>
                 </div>
 
             </div>
